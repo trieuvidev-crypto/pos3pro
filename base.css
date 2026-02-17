@@ -1,0 +1,118 @@
+/**
+ * base.css
+ * ─────────────────────────────────────────────────────
+ * CSS variables, reset, typography, utilities
+ * ─────────────────────────────────────────────────────
+ */
+
+/* ── VARIABLES ─────────────────────────────────────── */
+:root {
+  /* Màu nền */
+  --bg       : #0f172a;
+  --bg2      : #1e293b;
+  --bg3      : #334155;
+  --bg4      : #475569;
+  --border   : #334155;
+
+  /* Màu chính */
+  --orange   : #f97316;
+  --orange2  : #ea580c;
+  --orange-glow: rgba(249, 115, 22, 0.25);
+
+  /* Màu văn bản */
+  --text     : #f1f5f9;
+  --muted    : #94a3b8;
+  --dim      : #475569;
+
+  /* Màu trạng thái */
+  --green    : #16a34a;
+  --green2   : #15803d;
+  --green-bg : #14532d;
+  --blue     : #0369a1;
+  --blue2    : #075985;
+  --blue-bg  : #0c4a6e;
+  --red      : #b91c1c;
+  --red2     : #991b1b;
+  --red-bg   : #450a0a;
+  --amber    : #b45309;
+  --amber-bg : #451a03;
+  --purple   : #7e22ce;
+  --purple-bg: #3b0764;
+  --teal     : #0e7490;
+  --teal-bg  : #164e63;
+
+  /* Bo góc */
+  --r     : 12px;
+  --r-sm  : 8px;
+  --r-lg  : 18px;
+}
+
+/* ── RESET ─────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Courier New', Courier, monospace;
+  background: var(--bg);
+  color: var(--text);
+  overflow: hidden;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: inherit;
+}
+
+input, select, textarea {
+  font-family: inherit;
+  outline: none;
+  border: none;
+  background: none;
+}
+
+/* Ẩn mũi tên số */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+input[type=number] { -moz-appearance: textfield; }
+
+/* ── UTILITIES ─────────────────────────────────────── */
+.hidden  { display: none !important; }
+.show    { display: block; }
+.flex    { display: flex; }
+.gap-4   { gap: 4px; }
+.gap-8   { gap: 8px; }
+.gap-12  { gap: 12px; }
+.flex-1  { flex: 1; }
+.w-full  { width: 100%; }
+.text-center { text-align: center; }
+.text-right  { text-align: right; }
+
+.text-orange { color: var(--orange); }
+.text-muted  { color: var(--muted);  }
+.text-dim    { color: var(--dim);    }
+.text-green  { color: #4ade80; }
+.text-blue   { color: #38bdf8; }
+
+.fw-900  { font-weight: 900; }
+.fw-700  { font-weight: 700; }
+.fs-xs   { font-size: .7rem; }
+.fs-sm   { font-size: .8rem; }
+.fs-lg   { font-size: 1.1rem; }
+.fs-xl   { font-size: 1.4rem; }
+.fs-2xl  { font-size: 2rem; }
+
+/* ── SCROLLBAR ─────────────────────────────────────── */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--bg4); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: var(--muted); }

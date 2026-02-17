@@ -1,0 +1,361 @@
+/**
+ * layout.css
+ * ─────────────────────────────────────────────────────
+ * Cấu trúc tổng thể: header, nav, main, views
+ * ─────────────────────────────────────────────────────
+ */
+
+/* ── APP CONTAINER ─────────────────────────────────── */
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ── HEADER ────────────────────────────────────────── */
+#header {
+  background: var(--bg2);
+  border-bottom: 2px solid var(--orange);
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-shrink: 0;
+  z-index: 50;
+}
+
+.header-brand {
+  flex-shrink: 0;
+}
+
+#header-store {
+  color: var(--orange);
+  font-size: 1.25rem;
+  font-weight: 900;
+  letter-spacing: .1em;
+  display: block;
+}
+
+#header-date {
+  color: var(--dim);
+  font-size: .65rem;
+  margin-top: 2px;
+  display: block;
+}
+
+/* ── NAV ───────────────────────────────────────────── */
+#nav {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.nav-btn {
+  padding: 8px 12px;
+  border-radius: var(--r-sm);
+  font-size: .68rem;
+  font-weight: 900;
+  color: var(--muted);
+  background: transparent;
+  transition: all .15s;
+  letter-spacing: .03em;
+}
+
+.nav-btn:hover {
+  color: var(--text);
+  background: var(--bg3);
+}
+
+.nav-btn.active {
+  background: var(--orange);
+  color: #fff;
+  box-shadow: 0 4px 14px var(--orange-glow);
+}
+
+.nav-shortcut {
+  opacity: .35;
+  font-size: .6rem;
+}
+
+/* ── MAIN ──────────────────────────────────────────── */
+#main {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ── VIEWS ─────────────────────────────────────────── */
+.view {
+  display: none;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.view.show {
+  display: block;
+}
+
+/* Order view dùng flexbox riêng */
+#view-order {
+  display: none;
+  flex-direction: row;
+  height: 100%;
+  overflow: hidden;
+}
+
+#view-order.show {
+  display: flex;
+}
+
+/* ── VIEW PADDING ──────────────────────────────────── */
+.view-padded {
+  padding: 16px;
+}
+
+/* ── VIEW TITLE ────────────────────────────────────── */
+.view-title {
+  color: var(--orange);
+  font-size: 1.4rem;
+  font-weight: 900;
+  margin-bottom: 16px;
+}
+
+/* ── SECTION ───────────────────────────────────────── */
+.section {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 20px;
+  margin-bottom: 14px;
+}
+
+.section-title {
+  font-size: 1rem;
+  font-weight: 900;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+
+/* ── TABLE MAP ─────────────────────────────────────── */
+#view-tables {
+  padding: 16px;
+}
+
+.legend {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: .72rem;
+  color: var(--muted);
+}
+
+.legend-dot {
+  width: 13px;
+  height: 13px;
+  border-radius: 4px;
+}
+
+.zone-block {
+  margin-bottom: 28px;
+}
+
+.zone-title {
+  color: var(--orange);
+  font-size: 1.2rem;
+  font-weight: 900;
+  letter-spacing: .12em;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 12px;
+}
+
+.tables-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+/* ── STATS ROW ─────────────────────────────────────── */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+  margin-top: 8px;
+}
+
+.stat-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: 14px;
+  text-align: center;
+}
+
+.stat-num {
+  font-size: 2.4rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: .65rem;
+  color: var(--muted);
+  margin-top: 5px;
+}
+
+/* ── ORDER LAYOUT ──────────────────────────────────── */
+.menu-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--border);
+  min-width: 0;
+  overflow: hidden;
+}
+
+.order-panel {
+  width: 285px;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  overflow: hidden;
+  background: rgba(30, 41, 59, 0.7);
+}
+
+/* ── HISTORY ───────────────────────────────────────── */
+.hist-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+#hist-summary {
+  color: var(--muted);
+  font-size: .8rem;
+}
+
+/* ── REPORTS ───────────────────────────────────────── */
+.rep-period-bar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.rep-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.kpi-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 20px;
+}
+
+.kpi-card.wide {
+  grid-column: span 2;
+  border-color: rgba(249, 115, 22, .35);
+}
+
+.kpi-label {
+  color: var(--muted);
+  font-size: .72rem;
+  margin-bottom: 6px;
+}
+
+.kpi-value {
+  font-weight: 900;
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+/* ── SETTINGS ──────────────────────────────────────── */
+.settings-wrap {
+  max-width: 580px;
+}
+
+.settings-row {
+  margin-bottom: 12px;
+}
+
+.settings-row label {
+  display: block;
+  color: var(--muted);
+  font-size: .72rem;
+  margin-bottom: 5px;
+}
+
+.shortcut-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.shortcut-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: .78rem;
+  color: var(--muted);
+}
+
+kbd {
+  background: var(--bg3);
+  color: var(--orange);
+  padding: 3px 8px;
+  border-radius: var(--r-sm);
+  font-family: inherit;
+  font-weight: 900;
+  font-size: .75rem;
+  min-width: 28px;
+  text-align: center;
+}
+
+.backup-btns {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.stats-mini-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.stats-mini-card {
+  background: var(--bg3);
+  border-radius: var(--r);
+  padding: 14px;
+  text-align: center;
+}
+
+.stats-mini-num {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--orange);
+}
+
+.stats-mini-label {
+  font-size: .65rem;
+  color: var(--muted);
+  margin-top: 4px;
+}
